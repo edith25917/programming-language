@@ -34,7 +34,6 @@ int main()
         average = total / scores.size();
         
         // 輸出
-        cout<<"姓名: " << endl;
         cout<<"姓名: " << name << endl;
         cout<<"學號: " << stNum<< endl;
         cout<<"您的成績如下: "<< endl;
