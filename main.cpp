@@ -8,45 +8,44 @@ int main()
     string name;
     string stNum;
     array<int, 3> scores;
+    double total = 0;
+    double average = 0.0;
     
     while(true){
-        cout<<"½Ğ¿é¤J©m¦W: ";
+        cout<<"è«‹è¼¸å…¥å§“å: ";
         cin >> name;
     
-        cout<<"½Ğ¿é¤J¾Ç¸¹: ";
+        cout<<"è«‹è¼¸å…¥å­¸è™Ÿ: ";
         cin >> stNum;
         
-        cout<<"½Ğ¿é¤J°ê¤å¤À¼Æ: ";
+        cout<<"è«‹è¼¸å…¥åœ‹æ–‡åˆ†æ•¸: ";
         cin >> scores[0];
         
-        cout<<"½Ğ¿é¤J­^¤å¤À¼Æ: ";
+        cout<<"è«‹è¼¸å…¥è‹±æ–‡åˆ†æ•¸: ";
         cin >> scores[1];    
         
-        cout<<"½Ğ¿é¤J¼Æ¾Ç¤À¼Æ: ";
+        cout<<"è«‹è¼¸å…¥æ•¸å­¸åˆ†æ•¸: ";
         cin >> scores[2];  
         
-        // ºâÁ`¤À &¥­§¡
-        double total = 0;
-        double average = 0.0;
-    
+        // ç®—ç¸½åˆ† &å¹³å‡
         for(int i=0;i<scores.size();i++){
             total = total + scores[i];
         }
         average = total / scores.size();
         
-        // ¿é¥X
-        cout<<"©m¦W: " << endl;
-        cout<<"©m¦W: " << name << endl;
-        cout<<"¾Ç¸¹: " << stNum<< endl;
-        cout<<"±zªº¦¨ÁZ¦p¤U: "<< endl;
+        // è¼¸å‡º
+        cout<<"å§“å: " << endl;
+        cout<<"å§“å: " << name << endl;
+        cout<<"å­¸è™Ÿ: " << stNum<< endl;
+        cout<<"æ‚¨çš„æˆç¸¾å¦‚ä¸‹: "<< endl;
         cout<<"----------------- "<< endl;
-        cout<<"°ê¤å: " << scores[0]<< "¤À"<< endl;
-        cout<<"­^¤å: " << scores[1]<< "¤À"<< endl;
-        cout<<"¼Æ¾Ç: " << scores[2]<< "¤À"<< endl;
+        cout<<"åœ‹æ–‡: " << scores[0]<< "åˆ†"<< endl;
+        cout<<"è‹±æ–‡: " << scores[1]<< "åˆ†"<< endl;
+        cout<<"æ•¸å­¸: " << scores[2]<< "åˆ†"<< endl;
         cout<<"----------------- "<< endl;
-        cout<<"Á`¤À: " << total << "¤À"<< endl;
-        cout<<"¥­§¡: " << average<< "¤À"<< endl;
-        cout << "½Ğ«ö¥ô·NÁäÄ~Äò..." << endl;
+        cout<<"ç¸½åˆ†: " << total << "åˆ†"<< endl;
+        cout<<"å¹³å‡: " << average<< "åˆ†"<< endl;
+        cout << "è«‹æŒ‰ä»»æ„éµç¹¼çºŒ..." << endl;
         cin.get();
         exit(0);
     }
