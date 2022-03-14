@@ -33,6 +33,9 @@ double getDiscount(int identityType, bool isNum)
     return -1;
 }
 
+int getDiscountTotal(int total, int identityType){
+    return total * getDiscount(identityType, true);
+}
 
 int main()
 {
@@ -50,7 +53,7 @@ int main()
     cout<<"請輸入消費總額: ";
     cin >> total;
     
-    amountToPay = total * getDiscount(identityType, true);
+    amountToPay = getDiscountTotal(total, identityType);
     
     cout<<"-------------"<<endl;
     cout<<"姓名: "<<name<<endl;
