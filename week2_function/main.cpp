@@ -41,14 +41,14 @@ int main()
     int amountToPay;
     string name;
     
-    cout<<"請輸入消費總額: ";
-    cin >> total;
+    cout<<"請輸入姓名: ";
+    cin>>name;
     
     cout<<"請輸入身分類別: ";
     cin>>identityType;
     
-    cout<<"請輸入姓名: ";
-    cin>>name;
+    cout<<"請輸入消費總額: ";
+    cin >> total;
     
     amountToPay = total * getDiscount(identityType, true);
     
