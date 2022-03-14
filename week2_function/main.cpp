@@ -3,44 +3,27 @@
 
 using namespace std;
 
-string getIdentity(int identityType)
-{
-    switch(identityType) {
-        case 1:
-            return "員工";
-        case 2:
-            return "VIP";
-        case 3:
-            return "會員";
-        case 4: 
-            return "一般";
+int getDiscountTotal(int total, int type){
+    int discountTotal;
+    if(type == 1){
+        discountTotal =  total * 0.7;
     }
-    return "";
-}
-
-double getDiscount(int identityType, bool isNum)
-{
-    switch(identityType) {
-        case 1:
-            return isNum ? 0.7 : 7;
-        case 2:
-            return isNum ? 0.75 : 75;
-        case 3:
-            return isNum ? 0.9 : 9;
-        case 4: 
-            return isNum ? 0.95 : 95;
+    else if(type == 2){
+        discountTotal = total * 0.75;
     }
-    return -1;
-}
-
-int getDiscountTotal(int total, int identityType){
-    return total * getDiscount(identityType, true);
+    else if(type == 2){
+        discountTotal = total * 0.9;
+    }
+    else{
+        discountTotal = total * 0.95;
+    }
+    return discountTotal;
 }
 
 int main()
 {
     int total;
-    int identityType;
+    int type;
     int amountToPay;
     string name;
     
@@ -48,16 +31,29 @@ int main()
     cin>>name;
     
     cout<<"請輸入身分類別: ";
-    cin>>identityType;
+    cin>>type;
     
     cout<<"請輸入消費總額: ";
     cin >> total;
     
-    amountToPay = getDiscountTotal(total, identityType);
+    amountToPay = getDiscountTotal(total, type);
     
-    cout<<"-------------"<<endl;
     cout<<"姓名: "<<name<<endl;
-    cout<<"身分類別: "<<getIdentity(identityType) <<",折扣為"<<getDiscount(identityType, false) <<" 折"<<endl;
+    
+    switch(type) {
+        case 1:
+            cout<<"身分類別: 員工，折扣為7折"<<endl;
+            break;
+        case 2:
+            cout<<"身分類別: VIP，折扣為75折"<<endl;
+            break;
+        case 3:
+            cout<<"身分類別: 會員，折扣為9折"<<endl;
+            break;
+        case 4: 
+            cout<<"身分類別: 一般，折扣為95折"<<endl;
+            break;
+    }
     cout<<"消費金額: "<<total<<"元"<<endl;
     cout<<"應付金額: "<<amountToPay<<"元"<<endl;
 
