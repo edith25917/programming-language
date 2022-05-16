@@ -3,8 +3,8 @@
 using namespace std;
 
 void input(double &a, double &b, char &op);
-double calOutput(double &a, double &b, char &op);
-void printResult(double &a, double &b, char &op, double &output);
+double calOutput(double a, double b, char op);
+void printResult(double a, double b, char op, double output);
 
 int main()
 {
@@ -31,7 +31,7 @@ void input(double &a, double &b, char &op){
     cin>>op;
 }
 
-double calOutput(double &a, double &b, char &op){
+double calOutput(double a, double b, char op){
     double output = 0.0;
     if(op == '+'){
         output = a + b;
@@ -45,6 +45,6 @@ double calOutput(double &a, double &b, char &op){
     return output;
 }
 
-void printResult(double &a, double &b, char &op, double &result){
+void printResult(double a, double b, char op, double result){
     cout<<a << op << b <<"=" << result;
 }
